@@ -1,8 +1,10 @@
 const User = require('../models/user');
 
 module.exports = {
-    index
+    index, 
+    addComment
 };
+
 
 function index(req, res, next) {
       res.render('users/index', {
@@ -11,3 +13,10 @@ function index(req, res, next) {
       });
     
   };
+
+  function addComment(req, res, next) {
+      req.user.comments.push(req.body);
+      req.user.save(function(err){
+        res.redirect('/users');
+      });
+  }
