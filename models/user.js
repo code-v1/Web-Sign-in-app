@@ -1,4 +1,5 @@
 var mongoose = require('mongoose');
+const Schema = mongoose.Schema
 
 var userSchema = new mongoose.Schema({
     name: String,
@@ -10,3 +11,5 @@ var userSchema = new mongoose.Schema({
 }, {
     timestamps: true
 });
+
+module.exports = mongoose.model('User', userSchema);
