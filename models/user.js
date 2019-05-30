@@ -18,5 +18,12 @@ var userSchema = new mongoose.Schema({
     timestamps: true
 });
 
+var gameSchema = new mongoose.Schema({
+    text: String
+}, {
+    timestamps: true
+});
+
 module.exports = mongoose.model('User', userSchema);
 module.exports = mongoose.model('Comment', commentSchema);
+module.exports = mongoose.model('GameOne', gameSchema);
