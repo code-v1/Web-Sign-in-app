@@ -4,17 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
+  <link href="stylesheets/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    
     <title>Document</title>
 </head>
 <body>
-        <div class="col s12 m4">
-                <div class="icon-block">
-                  <h2><img src="images/mineCraftSmall.jpeg" alt="" style="width:290px;height:150px"></h2>
-                  <h5 class="center">Easy to work with</h5>
-      
-                  <p class="light">We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.</p>
-                </div>
-              </div>
-            </div>
+        <div class="container">
+                <div class="section">
+            
+                  <!--   Icon Section   -->
+                  <div class="row">
+                    <div class="col s12 m4">
+                      <div class="icon-block">
+                        <h2><img src="images/mineCraft.png" style="width:80vw;height:100vh" ></h2>
+                        <h5 class="center">Speeds up development</h5>
+            
+                        <p class="light">We did most of the heavy lifting for you to provide a default stylings </p>
+                        <img src="https://img.icons8.com/ios/64/000000/facebook-like.png"> <img src="https://img.icons8.com/ios/64/000000/facebook-like.png">
+                      </div>
+                    </div>
+
+                    <br><br><h2>Reviews</h2>
+<form id="add-review-form" method="POST"
+  action=""></form>
+  <label>Review:</label>
+  <textarea name="content"></textarea>
+  <label>Rating:</label>
+  <select name="rating">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+  </select>
+  <input type="submit" value="Add Review">
+</form>
 </body>
 </html>
