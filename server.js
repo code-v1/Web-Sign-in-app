@@ -12,8 +12,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var commentsRouter = require('./routes/comments');
 var gamesRouter = require('./routes/games');
-var games1Router = require('./routes/games1');
-var games2Router = require('./routes/games2');
+
 
 var app = express();
 require('dotenv').config();
@@ -46,10 +45,9 @@ app.use(passport.session());
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/comments', commentsRouter);
+app.use('/', commentsRouter);
 app.use('/games', gamesRouter);
-app.use('/games1', games1Router);
-app.use('/games2', games2Router);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
