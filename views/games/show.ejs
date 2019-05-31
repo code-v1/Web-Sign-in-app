@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <a href="/users/index">Home</a>
+    <p><%= game.name%> </p>
+    <form action="/games/<%= game._id %>/comments" method="POST" >
+        <label>Comment</label>
+        <input type="text" name="content">
+        <input type="submit" value="Add Comment">
+    </form>
+
+    <% if (game.comments.length){ %>
+        <% game.comments.forEach(comment=>{ %>
+            <p><%= comment.content%></p>
+       <% }) %>
+   <% } %>
+</body>
+</html>
