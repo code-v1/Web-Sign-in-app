@@ -4,18 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="/stylesheets/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="/stylesheets/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
     <title>Document</title>
 </head>
 <body>
     <% games.forEach(game=>{ %>
-        
-       
+        <table class="gameList">
+       <div>
         <a href="/games/<%= game._id %>"><%= game.name %></a>
-
+       </div>
+        </table>
 
 
     <% })%>
 <br>
-    <a href="/users/index">Home</a>
+    <a href="/users/index" style="font-size: 15vh">Home</a>
 </body>
+
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="/javascripts/js/materialize.js"></script>
+<script src="/javascripts/js/init.js"></script>
+
 </html>
