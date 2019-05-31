@@ -16,6 +16,7 @@
     "heroku": "^7.24.4",
     "http-errors": "~1.6.3",
     "materialize-css": "^1.0.0-rc.2",
+    "method-override": "^3.0.0",
     "mongoose": "^5.5.11",
     "morgan": "~1.9.1",
     "parser": "^0.1.4",

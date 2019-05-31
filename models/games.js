@@ -22,8 +22,7 @@ var gameSchema = new Schema({
 });
 
 function deleteOne(id) {
-    todos.splice
+    games.splice(id, 1);
 }
-
 
 module.exports = mongoose.model('Game', gameSchema);
