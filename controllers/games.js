@@ -1,12 +1,25 @@
 
-var GameOne = require('../models/user')
+var Game = require('../models/games')
 
 module.exports = {
-    
-    showDetail
+    create,
+    new: newGame,
+    show
 }
 
-function showDetail(req, res){
+function show(req, res){
 
-    res.render('users/gameOne');
+    Game.findById(req.params.id, function(err, game){
+        res.render('games/show', {game});
+    });
+};
+
+function create (req, res){
+    Game.create(req.body, function(err, game){
+        res.redirect('/')
+    })
+};
+
+function newGame (req, res){
+    res.render('games/new');
 };
