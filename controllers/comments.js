@@ -1,24 +1,31 @@
-var User = require('../models/user')
-var Game = require('../models/games');
+
+var Game = require('../models/game');
 
 
 module.exports = {
-    addComment,
+    create,
     delete: deleteComment
     
 }
 
 
-function addComment(req, res) {
-    Game.findById(req.params.id, function(err, game) {
-      game.comments.push(req.body);
-      game.save(function(err) {
-        res.redirect(`/games/${game._id}`);
-      });
-    });
-  }
+function create(req, res){
+  Recipe.findById(req.params.id, function(err, game)  {
+      req.body.user = req.user._id;
+      req.body.author = req.user.name;
+      req.body.avatar = req.user.avatar;
 
-  function deleteComment(req, res) {
-      Game.deleteOne(req.params.id);
-      res.redirect('/games');
-  }
+      game.comments.push(req.body);
+      game.save(err => {
+          res.redirect(`/games/${game._id}`);
+      });
+  });
+}
+
+
+
+function deleteComment(req, res){
+Game.findByIdAndUpdate(req.params.gameid, {$pull: {comments: {_id: req.params.commentid}}}, ()=>{
+      res.redirect(`/games/${req.params.gameid}`);
+  });
+}
