@@ -11,7 +11,7 @@
 </head>
 <body>
         <a href="/users/index" style="font-size: 5vh">Home</a>
-    <p><%= game.name%> </p>
+    <p><%= game._id %> </p>
     <form action="/games/<%= game._id %>/comments" method="POST" >
         <label>Comment</label>
         <input type="text" name="content">
