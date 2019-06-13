@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 const Schema = mongoose.Schema
 
 module.exports = {
-    deleteOne
+    
 }
 
 var commentSchema = new Schema({
@@ -21,8 +21,5 @@ var gameSchema = new Schema({
     timestamps: true
 });
 
-function deleteOne(id) {
-    games.splice(id, 1);
-}
 
 module.exports = mongoose.model('Game', gameSchema);
