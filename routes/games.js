@@ -1,11 +1,11 @@
 var express = require('express');
 var router = express.Router();
-var gameCtlr = require('../controllers/games');
+var gamesCtlr = require('../controllers/games');
 
 
-router.post('/', gameCtlr.create);
-router.get('/new', gameCtlr.new);
-router.get('/:id', gameCtlr.show);
+router.post("/games", gamesCtlr.index);
+router.get("/users/:id/recipes/new", idLoggedIn, gamesCtlr.new);
+router.get("/games/:id", gamesCtlr.show);
 
 
 

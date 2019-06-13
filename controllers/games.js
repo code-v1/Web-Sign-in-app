@@ -18,11 +18,19 @@ function show(req, res) {
 }
 
 function create (req, res){
-    Game.create(req.body, function(err, game){
-        res.redirect('/')
-    })
+    req.body.user = req.params.id;
 };
 
 function newGame (req, res){
     res.render('games/new');
 };
+
+function edit(req, res) {
+    Game.findById(req.params.id, (err, game) => {
+        res.render("games/edit", {
+            title: `${game.name}`,
+            user: req.user,
+            recipe
+        });
+    });
+}
