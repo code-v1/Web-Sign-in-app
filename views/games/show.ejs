@@ -11,7 +11,12 @@
 </head>
 <body>
         <a href="/users/index" style="font-size: 5vh">Home</a>
+        <a href="/games/<%= game._id %>/edit">EDIT</a>
+        <form action="/games/<%= game._id %>?_method=DELETE" method="POST">
+            <input type="submit" value="delete">    
+        </form>
     <p><%= game._id %> </p>
+    <p><%= game.text %> </p>
     <form action="/games/<%= game._id %>/comments" method="POST" >
         <label>Comment</label>
         <input type="text" name="content">
@@ -20,8 +25,11 @@
 
     <% if (game.comments.length){ %>
         <% game.comments.forEach(comment=>{ %>
-            <p><%= comment.content%></p>  <form action="games/<% comment._id%>?_method=DELETE" method="POST" >
-            <input type="submit" value="X"></form>
+            <p><%= comment.content%></p> 
+             <form action="games/<%= comment._id%>?_method=DELETE" method="POST" >
+            <input type="submit" value="X">
+        
+        </form>
             <% }) %>
    <% } %>
 </body>

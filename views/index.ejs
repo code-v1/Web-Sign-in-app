@@ -22,6 +22,17 @@
                 </div>
                 <nav class="transparent" role="navigation" >
                   <div class="nav-wrapper container">
+
+                      <% if (user) { %>
+                        <li>
+                            <a href="/users/<%= user._id%>">My Account</a>
+                        </li>
+                        <li>
+                            <a href="/logout">Log Out</a>
+                        </li>
+                        <% } else { %>
+                        <a href="/auth/google">Login with Google</a>
+                        <% } %>
                     
                     
                    
@@ -58,7 +69,7 @@
           </div>
         </div>
 
-        <div class="col s12 m4">
+        <div class="col s12 m4">z
           <div class="icon-block">
             <a href="/games"><h2><img src="/images/fortnite.png" alt="" style="width:290px;height:150px"></h2> </i></h2></a>
             <h5 class="center">Fortnite</h5>
