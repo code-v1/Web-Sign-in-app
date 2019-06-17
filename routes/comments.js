@@ -6,7 +6,7 @@ var gamesCtlr = require("../controllers/games");
 
 router.get("/games/:id/comments", gamesCtlr.show );
 router.post("/games/:id/comments", isLoggedIn, commentsCtlr.create);
-router.delete("/games/:gameid/comments/:commentid", isLoggedIn, commentsCtlr.delete);
+router.delete("/games/:gameid/comments/:commentid", commentsCtlr.delete);
 
 function isLoggedIn(req, res, next) {
     if (req.isAuthenticated()) return next();

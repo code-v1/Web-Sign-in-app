@@ -4,7 +4,8 @@ var gamesCtlr = require('../controllers/games');
 
 
 router.get("/games", gamesCtlr.index);
-router.get("/games/new", isLoggedIn,  gamesCtlr.new);
+router.get("/games/new",  gamesCtlr.new);
+router.post("/users/:id/games", gamesCtlr.create);
 router.get("/games/:id", gamesCtlr.show);
 router.get("/games/:id/edit", gamesCtlr.edit);
 router.put("/games/:id", gamesCtlr.update);
