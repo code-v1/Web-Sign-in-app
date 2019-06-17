@@ -49,6 +49,7 @@ function create (req, res){
         console.log(req.body);
         res.redirect(`/games/${game._id}`);
     });
+    
 };
 
 function newGame (req, res){
