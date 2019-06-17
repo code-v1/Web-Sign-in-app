@@ -10,17 +10,23 @@
     <title>Document</title>
 </head>
 <body>
+        <h2>Game List</h2>
     <% games.forEach(game=>{ %>
-        <table class="gameList">
+        
        <div>
-        <a href="/games/<%= game._id %>"><%= game.name %></a>
+           
+            <ul class="collection">
+       <li class="collection-item" style="text-align: center"><a href="/games/<%= game._id %>"><%= game.name %></a> </li>
+            </ul>
        </div>
-        </table>
-
+        
+    
 
     <% })%>
 <br>
-    <a href="/" style="font-size: 15vh">Home</a>
+    <a href="/" style="font-size: 10vh">Home</a> 
+    <br>
+    <a href="/games/new"><i class="material-icons left" style="font-size: 7vh">trending_flat</i>Create New Game</a>
 </body>
 
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
