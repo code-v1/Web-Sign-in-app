@@ -10,8 +10,8 @@
     <title>create</title>
 </head>
 <body>
-        <a href="/users/index">Home</a>
-    <form action="/games" method="POST"> 
+        <a href="/">Home</a>
+    <form action="/users/<%= user._id%>/games" method="POST"> 
         <label>name:</label>
 <input type="text" name="name">
 <label>imageURL</label>

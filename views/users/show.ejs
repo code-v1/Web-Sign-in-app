@@ -8,11 +8,11 @@
                 <form action="/users/<%= user._id%>/games/<%= game._id%>?_method=DELETE" method="POST">
                     <input type="submit" value="X" class="x-button">
                 </form>
-                <a href="/games/<%= game._id%>"> <%= game.name%> </a>
+                <a href="/games/<%= game._id %>"> <%= game.name %> </a>
             </li>
             <% }); %>
         </ul>
-        <a href="/users/<%= user._id%>/games/new">Add New Recipe</a>
+        <a href="/games/new">Add New Game</a>
     </div>
 
 <%- include("../partials/footer") %>
