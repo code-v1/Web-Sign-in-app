@@ -11,7 +11,8 @@
 </head>
 <body>
         <a href="/" style="font-size: 5vh">Home</a>
-        <a href="/games/<%= game._id %>/edit">EDIT</a>
+        <br>
+        <a href="/games/<%= game._id %>/edit" style="font-size: 5vh">Edit</a>
         <form action="/games/<%= game._id %>?_method=DELETE" method="POST">
             <input type="submit" value="delete">    
         </form>
